@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subir foto</title>
+</head>
+<body>
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card mb-4">
+      <div class="card-body text-center">
+        <img id="preview2" src="https://img.freepik.com/premium-vector/camera-icon-cartoon-flat-design_387795-125.jpg?w=2000" alt="avatar"
+             class=" img-fluid" style="width: 255px;">
+        <h5 class="my-3" style="color: black">Fotos de lo sucedido</h5>
+        <div id="galeria"></div>
+        <div class="d-flex justify-content-center mb-1">
+          <label for="subirfotos" class="btn btn-lg-primary">Agregar Imágenes</label>
+          <input onchange="document.getElementById('preview2').src = window.URL.createObjectURL(this.files[0]);previewMultiple(event)" name="archivos" id="subirfotos" multiple hidden type="file">
+
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+<script>
+
+  function previewMultiple(event){
+    var saida = document.getElementById("subirfotos");
+    var quantos = saida.files.length;
+    for(i = 0; i < quantos; i++){
+      var urls = URL.createObjectURL(event.target.files[i]);
+      document.getElementById("galeria").innerHTML += '<img src="'+urls+'">';
+    }
+  }
+
+</script>
+</body>
+</html>
