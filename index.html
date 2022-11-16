@@ -41,7 +41,29 @@
   <p>Hello world! This is HTML5 Boilerplate.</p>
 
   <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg">
+  <button type="submit"; class="btn btn-redtele accion_button"
+          style="background-color: limegreen"
+          data-bs-toggle="modal" data-bs-target="#activar">Help</button>
 
+  <div class="modal fade" id="activar"
+       aria-hidden="true" aria-labelleby="modalTitle">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Ayuda a usuario</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >
+            Cerrar
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
   <div id="display-image"></div>
 
 
@@ -52,6 +74,8 @@
 
 
   <script>
+
+
     const image_input = document.querySelector("#image-input");
 
     image_input.addEventListener("change", function() {
